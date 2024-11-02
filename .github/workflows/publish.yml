@@ -6,8 +6,8 @@ on:
       - 'v*'
 
 permissions:
-  contents: write # Add this line for release creation
-  packages: write # If you're also publishing packages
+  contents: write
+  packages: write
 
 jobs:
   build:
@@ -34,18 +34,20 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release /p:Version=${{ steps.version.outputs.version-without-v }} --output .
 
+      # Add GitHub Packages source
+      - name: Add GitHub Source
+        run: |
+          dotnet nuget add source --username jacobwi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/jacobwi/index.json"
+
+      # Push to GitHub Packages
+      - name: Push to GitHub Packages
+        run: |
+          dotnet nuget push *.nupkg --source "github" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+
+      # Push to NuGet.org
       - name: Push to NuGet
         run: |
-          for attempt in {1..3}; do
-            if dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY} --skip-duplicate; then
-              exit 0
-            fi
-            echo "Attempt $attempt failed. Waiting 30 seconds before retry..."
-            sleep 30
-          done
-          exit 1
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
 
       - name: Create Release
         uses: ncipollo/release-action@v1
