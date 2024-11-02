@@ -8,7 +8,7 @@
         <Nullable>enable</Nullable>
         <PackageTags>aspire integration hosting maildev mail</PackageTags>
         <Description>MailDev support for .NET Aspire.</Description>
-        <Version>8.2.2.2</Version>
+        <Version>8.2.2.3</Version>
         <Title>Aspire.Hosting.MailDev</Title>
         <Authors>BCat</Authors>
         <PackageIcon>favicon.png</PackageIcon>
