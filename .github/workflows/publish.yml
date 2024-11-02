@@ -5,26 +5,28 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write # Add this line for release creation
+  packages: write # If you're also publishing packages
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4 # Updated to v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4 # Updated to v4
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-      # Replace battila7/get-version-action with manual version extraction
       - name: Get Version
         id: version
         shell: bash
         run: |
-          # Remove 'v' prefix from tag
           VERSION=${GITHUB_REF#refs/tags/v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "version-without-v=$VERSION" >> $GITHUB_OUTPUT
@@ -46,7 +48,7 @@ jobs:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
       - name: Create Release
-        uses: ncipollo/release-action@v1 # Modern alternative to softprops/action-gh-release
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "*.nupkg"
           name: Release ${{ steps.version.outputs.version }}
@@ -56,5 +58,4 @@ jobs:
             ### Changes
             - Please list changes here
           draft: true
-          token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
