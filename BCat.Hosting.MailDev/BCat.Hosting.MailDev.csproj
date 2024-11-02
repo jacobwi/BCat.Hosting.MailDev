@@ -8,8 +8,7 @@
         <Nullable>enable</Nullable>
         <PackageTags>aspire integration hosting maildev mail</PackageTags>
         <Description>MailDev support for .NET Aspire.</Description>
-        <Version>8.2.2.3</Version>
-        <Title>Aspire.Hosting.MailDev</Title>
+        <Version>8.2.2.4</Version>
         <Authors>BCat</Authors>
         <PackageIcon>favicon.png</PackageIcon>
         <PackageId>BCat.Aspire.MailDev</PackageId>
@@ -25,7 +24,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
         <!-- Package Info -->
-        <PackageProjectUrl>https://github.com/yourusername/Aspire.Hosting.MailDev</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/jacobwi/Aspire.Hosting.MailDev</PackageProjectUrl>
         <RepositoryUrl>https://github.com/jacobwi/BCat.Hosting.MailDev</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
