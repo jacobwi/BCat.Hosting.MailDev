@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <!--<TargetFramework>$(DefaultTargetFramework)</TargetFramework>-->
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsPackable>true</IsPackable>
+        <Nullable>enable</Nullable>
+        <PackageTags>aspire integration hosting maildev mail</PackageTags>
+        <Description>MailDev support for .NET Aspire.</Description>
+        <Version>8.2.2</Version>
+        <Title>Aspire.Hosting.MailDev</Title>
+        <Authors>BCat</Authors>
+        <PackageIcon>favicon.png</PackageIcon>
+        <PackageId>BCat.Aspire.MailDev</PackageId>
+        <Title>BCat.Aspire.MailDev</Title>
+        <RootNamespace>Aspire.Hosting.MailDev</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Aspire.Hosting" Version="8.2.2" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <!-- Include the icon file in the package -->
+        <None Include="assets\favicon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <!-- Include the README in the package -->
+        <None Include="README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+</Project>
