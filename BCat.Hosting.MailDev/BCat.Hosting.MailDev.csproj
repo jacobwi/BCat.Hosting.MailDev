@@ -8,7 +8,7 @@
         <Nullable>enable</Nullable>
         <PackageTags>aspire integration hosting maildev mail</PackageTags>
         <Description>MailDev support for .NET Aspire.</Description>
-        <Version>8.2.2</Version>
+        <Version>8.2.2.2</Version>
         <Title>Aspire.Hosting.MailDev</Title>
         <Authors>BCat</Authors>
         <PackageIcon>favicon.png</PackageIcon>
@@ -16,8 +16,19 @@
         <Title>BCat.Aspire.MailDev</Title>
         <RootNamespace>Aspire.Hosting.MailDev</RootNamespace>
         <Copyright>Copyright 2024 BCat</Copyright>
-        <PackageProjectUrl>https://github.com/jacobwi/BCat.Hosting.MailDev</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+
+        <!-- Source Link -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <!-- Package Info -->
+        <PackageProjectUrl>https://github.com/yourusername/Aspire.Hosting.MailDev</PackageProjectUrl>
         <RepositoryUrl>https://github.com/jacobwi/BCat.Hosting.MailDev</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,5 +42,9 @@
             <PackagePath></PackagePath>
         </None>
         <!-- Include the README in the package -->
+        <None Include="../README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
     </ItemGroup>
 </Project>
