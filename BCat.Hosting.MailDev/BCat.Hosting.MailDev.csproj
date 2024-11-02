@@ -15,6 +15,9 @@
         <PackageId>BCat.Aspire.MailDev</PackageId>
         <Title>BCat.Aspire.MailDev</Title>
         <RootNamespace>Aspire.Hosting.MailDev</RootNamespace>
+        <Copyright>Copyright 2024 BCat</Copyright>
+        <PackageProjectUrl>https://github.com/jacobwi/BCat.Hosting.MailDev</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/jacobwi/BCat.Hosting.MailDev</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
@@ -28,9 +31,5 @@
             <PackagePath></PackagePath>
         </None>
         <!-- Include the README in the package -->
-        <None Include="README.md">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
     </ItemGroup>
 </Project>
