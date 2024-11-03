@@ -1,3 +1,6 @@
+[![NuGet](https://img.shields.io/nuget/v/BCat.Aspire.MailDev.svg)](https://www.nuget.org/packages/BCat.Aspire.MailDev)
+[![Downloads](https://img.shields.io/nuget/dt/BCat.Aspire.MailDev.svg)](https://www.nuget.org/packages/BCat.Aspire.MailDev)
+
 # Aspire.Hosting.MailDev
 
 MailDev integration for .NET Aspire applications. This package provides a simple way to add MailDev to your Aspire application for testing emails during development.
