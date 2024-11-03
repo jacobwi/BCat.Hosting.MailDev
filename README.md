@@ -5,7 +5,7 @@ MailDev integration for .NET Aspire applications. This package provides a simple
 ## Installation
 In your AppHost project, install the .NET Aspire Keycloak Hosting library with [NuGet](https://www.nuget.org):
 ```dotnetcli
-dotnet add package BCat.Hosting.Keycloak
+dotnet add package BCat.Aspire.MailDev
 ```
 
 ## Usage
